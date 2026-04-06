@@ -23,7 +23,7 @@ const Navbar = () => {
     )
 
     return (
-        <div className='bg-base-100 shadow-sm'>
+        <div className='bg-base-100 shadow-sm py-3'>
             <div className="navbar w-11/12 lg:w-10/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -44,8 +44,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
-                    <a className="bg-[#23BE0A] py-2 px-3 rounded-lg text-white font-semibold">Button</a>
-                    <a className="bg-[#59C6D2] py-2 px-3 rounded-lg text-white font-semibold">Button</a>
+                    <a className="bg-[#23BE0A] py-2 px-3 rounded-lg text-white font-semibold">Sign In</a>
+                    <a className="bg-[#59C6D2] py-2 px-3 rounded-lg text-white font-semibold">Sign Up</a>
                 </div>
             </div>
         </div>
