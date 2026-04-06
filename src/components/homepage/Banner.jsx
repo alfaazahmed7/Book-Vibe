@@ -8,7 +8,7 @@ const Banner = () => {
                 <h2 className='text-4xl lg:text-6xl font-bold lg:leading-[84px] mb-8 font-playfair'>Books to freshen up your bookshelf</h2>
                 <a className="bg-[#23BE0A] py-3 px-5 rounded-lg text-white font-semibold">View The List</a>
             </div>
-            <div className='flex-1 flex justify-center lg:justify-end'>
+            <div className='flex-1 flex justify-center lg:justify-end lg:pr-20'>
                 <img src={BannerImg} alt="" />
             </div>
         </div>
