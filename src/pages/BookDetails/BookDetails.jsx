@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { BookContext } from '../../context/BookProvider';
 
 const BookDetails = () => {
     const { bookId } = useParams();
-    console.log(bookId);
 
     const books = useLoaderData();
     const expectedBook = books.find(book => book.bookId === Number(bookId));
-    console.log("expectedBook", expectedBook);
+
+    const {handleMarkAsRead, storedBooks} = useContext(BookContext);
 
     return (
-        <div className='w-10/12 mx-auto lg:flex justify-between gap-10 my-10'>
-            <div className='flex-1 bg-gray-200 py-10 rounded-xl mb-5'>
+        <div className='w-11/12 md:w-10/12 mx-auto lg:flex justify-between gap-10 my-10'>
+            <div className='flex-1 md:bg-gray-200 py-10 rounded-xl mb-5'>
                 <img
-                    className='max-w-[425px] max-h-[600 px] mx-auto'
+                    className='md:max-w-[425px] max-h-[600px] mx-auto'
                     src={expectedBook.image} alt="" />
             </div>
 
@@ -57,9 +58,11 @@ const BookDetails = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-10'>
-                    <a className='p-4 border border-[#13131350] text-xl rounded-lg font-semibold'>Read</a>
-                    <a className='bg-[#50B1C9] p-4 rounded-xl font-semibold text-white'>Wishlist</a>
+                <div className='flex items-center gap-5'>
+                    <button
+                        onClick={() => handleMarkAsRead(expectedBook)}
+                        className='p-4 border border-[#13131350] text-xl rounded-lg font-semibold cursor-pointer'>Read</button>
+                    <button className='bg-[#50B1C9] p-4 rounded-xl font-semibold text-white cursor-pointer'>Wishlist</button>
                 </div>
             </div>
         </div>
