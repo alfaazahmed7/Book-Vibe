@@ -8,7 +8,7 @@ const BookDetails = () => {
     const books = useLoaderData();
     const expectedBook = books.find(book => book.bookId === Number(bookId));
 
-    const {handleMarkAsRead, storedBooks} = useContext(BookContext);
+    const { handleMarkAsRead, handleWishList } = useContext(BookContext);
 
     return (
         <div className='w-11/12 md:w-10/12 mx-auto lg:flex justify-between gap-10 my-10'>
@@ -62,7 +62,9 @@ const BookDetails = () => {
                     <button
                         onClick={() => handleMarkAsRead(expectedBook)}
                         className='p-4 border border-[#13131350] text-xl rounded-lg font-semibold cursor-pointer'>Read</button>
-                    <button className='bg-[#50B1C9] p-4 rounded-xl font-semibold text-white cursor-pointer'>Wishlist</button>
+                    <button
+                        onClick={() => handleWishList(expectedBook)}
+                        className='bg-[#50B1C9] p-4 rounded-xl font-semibold text-white cursor-pointer'>Wishlist</button>
                 </div>
             </div>
         </div>
